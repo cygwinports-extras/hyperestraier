@@ -1,0 +1,8 @@
+category: Text
+requires: cygwin libestraier8 libbz2-devel libiconv liblzo2-devel libqdbm-devel zlib
+external-source: hyperestraier
+sdesc: "Full-text search system (libdevel)"
+ldesc: "Hyper Estraier is a full-text search system. You can search lots 
+of documents for some documents including specified words. If you run a 
+web site, it is useful as your own search engine for pages in your site. 
+Also, it is useful as search utilities of mail boxes and file servers."

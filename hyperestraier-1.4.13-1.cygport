@@ -1,0 +1,51 @@
+inherit ruby
+
+DESCRIPTION="Full-text search system"
+HOMEPAGE="http://hyperestraier.sourceforge.net/"
+SRC_URI="http://hyperestraier.sourceforge.net/${P}.tar.gz"
+
+abi=8
+PKG_NAMES="${PN} libestraier${abi} libestraier-devel ruby-estraier"
+PKG_HINTS="bin lib devel ruby"
+PKG_CONTENTS[0]="--exclude=estconfig* --exclude=*.rb --exclude=man3
+                 usr/bin/est* usr/lib/estraier/ usr/share/"
+PKG_CONTENTS[1]="usr/bin/*-${abi}.dll"
+PKG_CONTENTS[2]="usr/bin/estconfig usr/include/ usr/lib/lib* usr/lib/pkgconfig/
+                 usr/share/man/man1/estconfig.* usr/share/man/man3/"
+PKG_CONTENTS[3]="usr/bin/*.rb ${RUBY_SITELIB#/}"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygconf \
+		--libexecdir=/usr/lib/estraier \
+		--enable-bzip \
+		--enable-lzo \
+		--enable-stable \
+		--disable-mecab
+	cygmake MYLIBS='$(MYWINLIBS)'
+
+	chmod +x estconfig
+
+	cd ${B}/rubypure
+	cygconf
+	cygmake
+
+	cd ${B}/rubynative
+	cygconf
+	cygmake
+}
+
+src_install() {
+	cd ${B}
+	cyginstall MYLIBS='$(MYWINLIBS)'
+	dobin *.dll
+	strip ${D}/usr/lib/estraier/*
+	rm -fr ${D}/usr/share/${PN}/doc/
+
+	cd ${B}/rubypure
+	cyginstall
+
+	cd ${B}/rubynative
+	cyginstall MYRBLIBDIR=${RUBY_SITEARCH}
+}

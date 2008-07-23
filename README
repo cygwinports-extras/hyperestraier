@@ -1,0 +1,127 @@
+hyperestraier
+------------------------------------------
+Hyper Estraier is a full-text search system. You can search lots of 
+documents for some documents including specified words. If you run a web 
+site, it is useful as your own search engine for pages in your site. 
+Also, it is useful as search utilities of mail boxes and file servers.
+
+Runtime requirements:
+  cygwin-1.5.25-15
+  libiconv2-1.11-1
+  liblzo2_2-2.02-1
+  libqdbm14-1.8.77-2
+  zlib-1.2.3-2
+(ruby-estraier)
+  ruby-1.8.7_p22-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-20080523-2
+  cygport-0.3.12-1
+  gcc-core-3.4.4-3
+  make-3.81-1
+
+Canonical website:
+  http://hyperestraier.sourceforge.net/
+
+Canonical download:
+  http://hyperestraier.sourceforge.net/
+
+-------------------------------------------
+
+Build instructions:
+  unpack hyperestraier-1.4.13-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./hyperestraier-1.4.13-X.cygport all
+
+This will create:
+  /usr/src/hyperestraier-1.4.13-X-src.tar.bz2
+  /usr/src/hyperestraier-1.4.13-X.tar.bz2
+  /usr/src/libestraier-devel-1.4.13-X.tar.bz2
+  /usr/src/libestraier8-1.4.13-X.tar.bz2
+  /usr/src/ruby-estraier-1.4.13-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary packages:
+
+  /usr/bin/estbutler.exe
+  /usr/bin/estcall.exe
+  /usr/bin/estcmd.exe
+  /usr/bin/estload.exe
+  /usr/bin/estmaster.exe
+  /usr/bin/estmttest.exe
+  /usr/bin/estwaver.exe
+  /usr/bin/estwolefind
+  /usr/lib/estraier/estfraud.cgi
+  /usr/lib/estraier/estproxy.cgi
+  /usr/lib/estraier/estscout.cgi
+  /usr/lib/estraier/estseek.cgi
+  /usr/lib/estraier/estsupt.cgi
+  /usr/share/doc/hyperestraier-1.4.13/COPYING
+  /usr/share/doc/hyperestraier-1.4.13/ChangeLog
+  /usr/share/doc/hyperestraier-1.4.13/README
+  /usr/share/doc/hyperestraier-1.4.13/THANKS
+  /usr/share/hyperestraier/COPYING
+  /usr/share/hyperestraier/ChangeLog
+  /usr/share/hyperestraier/THANKS
+  /usr/share/hyperestraier/estfraud.conf
+  /usr/share/hyperestraier/estproxy.conf
+  /usr/share/hyperestraier/estraier.idl
+  /usr/share/hyperestraier/estresult.dtd
+  /usr/share/hyperestraier/estscout.conf
+  /usr/share/hyperestraier/estseek.conf
+  /usr/share/hyperestraier/estseek.help
+  /usr/share/hyperestraier/estseek.tmpl
+  /usr/share/hyperestraier/estseek.top
+  /usr/share/hyperestraier/estsupt.conf
+  /usr/share/hyperestraier/filter/estfxasis
+  /usr/share/hyperestraier/filter/estfxmantotxt
+  /usr/share/hyperestraier/filter/estfxmsotohtml
+  /usr/share/hyperestraier/filter/estfxpdftohtml
+  /usr/share/hyperestraier/filter/estfxxdwtotxt
+  /usr/share/hyperestraier/filter/estwnetxpnd
+  /usr/share/hyperestraier/increm/estseek-form.html
+  /usr/share/hyperestraier/increm/estseek-frame.html
+  /usr/share/hyperestraier/locale/ja/estseek.conf
+  /usr/share/hyperestraier/locale/ja/estseek.help
+  /usr/share/hyperestraier/locale/ja/estseek.tmpl
+  /usr/share/hyperestraier/locale/ja/estseek.top
+  /usr/share/man/man1/estcall.1.gz
+  /usr/share/man/man1/estcmd.1.gz
+  /usr/share/man/man1/estmaster.1.gz
+  /usr/share/man/man1/estwaver.1.gz
+
+(libestraier8)
+  /usr/bin/cygestraier-8.dll
+
+(libestraier-devel)
+  /usr/bin/estconfig
+  /usr/include/estmtdb.h
+  /usr/include/estnode.h
+  /usr/include/estraier.h
+  /usr/lib/libestraier.a
+  /usr/lib/libestraier.dll.a
+  /usr/lib/pkgconfig/hyperestraier.pc
+  /usr/share/man/man1/estconfig.1.gz
+  /usr/share/man/man3/estnode.3.gz
+  /usr/share/man/man3/estraier.3.gz
+
+(ruby-estraier)
+  /usr/bin/estcall.rb
+  /usr/bin/estcmd.rb
+  /usr/lib/ruby/site_ruby/1.8/estraierpure.rb
+  /usr/lib/ruby/site_ruby/1.8/i386-cygwin/estraier.so
+
+------------------
+
+Port Notes:
+
+----- version 1.4.13-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/
