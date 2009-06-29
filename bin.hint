@@ -1,5 +1,5 @@
 category: Text
-requires: cygwin libestraier8 libqdbm14
+requires: libestraier8 libqdbm14
 sdesc: "Full-text search system (apps)"
 ldesc: "Hyper Estraier is a full-text search system. You can search lots 
 of documents for some documents including specified words. If you run a 

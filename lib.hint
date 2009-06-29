@@ -1,5 +1,5 @@
 category: Text
-requires: cygwin libbz2_1 libiconv2 liblzo2_2 libqdbm14 zlib
+requires: libbz2_1 libiconv2 liblzo2_2 libqdbm14 zlib
 external-source: hyperestraier
 sdesc: "Full-text search system (runtime)"
 ldesc: "Hyper Estraier is a full-text search system. You can search lots 
